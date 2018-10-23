@@ -12,7 +12,7 @@ package 'git' do
 	action :install
 end
 
-file '/etc/motd' do
+file '/etc/motd-raj' do
 	content 'This server is the property of MCMCG'
 	action :create
 	owner 'root'
