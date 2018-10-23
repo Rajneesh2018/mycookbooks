@@ -12,13 +12,7 @@ package 'git' do
 	action :install
 end
 
-file '/etc/motd-raj' do
-	content "This server is the property of MCMCG
-		Hostname: #{node['hostname']}
-		IP addreess: #{node['ipaddress']}
-		CPU: #{node['cpu']['0']['mhz']}
-		Memory: #{node['memory']['total']}"
+template '/etc/motd-raj' do
+	source 'motd-raj.erb'
 	action :create
-	owner 'root'
-	group 'root'
 end
